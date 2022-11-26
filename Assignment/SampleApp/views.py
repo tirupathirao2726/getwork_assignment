@@ -7,5 +7,4 @@ def home(request):
 
 def get_data(request):
     q=Question.objects.all()
-    print(q)
     return render(request,'data.html',{'data':q})
