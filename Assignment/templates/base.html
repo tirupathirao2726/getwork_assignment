@@ -1,0 +1,17 @@
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  </head>
+  <body>
+    <ul>
+      <li><a href="{% url 'SampleApp:index' %}">Home</a></li>
+      <li><a href="{% url 'admin:index' %}">Admin</a></li>
+      <li><a href="{% url 'SampleApp:get_data' %}">Get Data</a></li>
+    </ul>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

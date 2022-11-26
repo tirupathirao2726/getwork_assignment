@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}DATA{% endblock %}</title>
+  </head>
+  <body>
+    {% block content %}
+    <h2>Data from Question Model</h2>
+    {% if data %}
+    <table>
+      <th>Question</th>
+      <th>published data</th>
+      {% for each in data %}
+      <tr>
+        <td>{{each.question_text}}</td>
+        <td>{{each.publish_date}}</td>
+      </tr>
+    {% endfor %}
+    </table>
+    {% else %}
+    <h1>No data</h1>
+    {% endif %}
+    {% endblock%}
+  </body>
+</html>
